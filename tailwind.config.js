@@ -1,17 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./Components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "var(--background-color)",
+        text: "var(--text-color)",
+        text2: "var(--text2-color)",
+        text3: "var(--text3-color)",
+        text4: "var(--text4-color)",
+        font: "var(--cairo)",
+        btn: "var(--btn-color)",
       },
+     
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-rtl"),
+    // يمكنك إضافة إضافات أخرى هنا
+  ],
 };

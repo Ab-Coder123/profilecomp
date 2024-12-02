@@ -1,15 +1,11 @@
-import localFont from "next/font/local";
+import Footer from "@/Components/Footer/Footer";
 import "./globals.css";
+import Nav from "@/Components/Navbar/Nav";
+import { Cairo } from "next/font/google";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const cairo = Cairo({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"], // حدد الأوزان التي تحتاجها
 });
 
 export const metadata = {
@@ -19,11 +15,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="ar">
+      <body className={cairo.className}>
+        <Nav />
         {children}
+        <Footer/>
       </body>
     </html>
   );

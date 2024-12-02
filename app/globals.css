@@ -1,11 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  :root {
+    --text-color: #004aad; /* اللون الأساسي */
+    --text2-color: #cca049; /* اللون الأساسي */
+    --text3-color: #f3d494; /* اللون الأساسي */
+    --text4-color: white; /* اللون الأساسي */
+    --background-color: #dbaf5a ; /* لون الخلفية */
+    --btn-color: #034396; /* لون النص */
+  }
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -14,8 +19,74 @@
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+html[lang='ar'] {
+  direction: rtl;
+  text-align: right;
 }
+
+html[lang='en'] {
+  direction: ltr;
+  text-align: left;
+}
+
+.headimg {
+  margin: 0;
+  padding: 0;
+  background-image: url('../public/assets/image/970.jpg'); /* مسار الصورة */
+  background-size: cover; /* يجعل الصورة تغطي الشاشة بالكامل */
+  background-repeat: no-repeat; /* يمنع تكرار الصورة */
+  background-position: center; /* يضع الصورة في منتصف الشاشة */
+  height: 100vh;
+  
+}
+
+
+
+
+
+
+
+
+/* الأنيميشن لتحريك الصورة وتلاشيها */
+@keyframes fade-slide {
+  0% {
+    transform: translateX(100%);  /* الصورة تبدأ خارج الشاشة من اليمين */
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);  /* الصورة تظهر في مكانها الطبيعي */
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);  /* الصورة تتحرك خارج الشاشة من اليسار */
+    opacity: 0;
+  }
+}
+
+
+/* صورة 1 - الأنيميشن يبدأ مباشرة */
+.fade-animation-1 {
+  animation: fade-slide 5s infinite 0s;  /* 0s يعني يبدأ فورًا */
+}
+
+/* صورة 2 - الأنيميشن يبدأ بعد تأخير 1s */
+.fade-animation-2 {
+  animation: fade-slide 5s infinite 1s;  /* تأخير 1 ثانية */
+}
+
+/* صورة 3 - الأنيميشن يبدأ بعد تأخير 2s */
+.fade-animation-3 {
+  animation: fade-slide 5s infinite 2s;  /* تأخير 2 ثانية */
+}
+
+/* صورة 4 - الأنيميشن يبدأ بعد تأخير 3s */
+.fade-animation-4 {
+  animation: fade-slide 5s infinite 3s;  /* تأخير 3 ثواني */
+}
+
+/* صورة 5 - الأنيميشن يبدأ بعد تأخير 4s */
+.fade-animation-5 {
+  animation: fade-slide 5s infinite 4s;  /* تأخير 4 ثواني */
+}
+
